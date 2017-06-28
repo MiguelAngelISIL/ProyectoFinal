@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/agregar"
+        android:title="agregar"/>
+    <item
+    android:id="@+id/editar"
+    android:title="editar"/>
+    <item
+        android:id="@+id/guardar"
+        android:title="Guardar"/>
+    <item
+        android:id="@+id/cerrar"
+        android:title="Cerrar Sesion"/>
+
+
+</menu>

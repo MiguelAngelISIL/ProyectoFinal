@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="pl_anios">
+        <item quantity="one">%d Año</item>
+        <item quantity="other">%d Años</item>
+    </plurals>
+</resources>

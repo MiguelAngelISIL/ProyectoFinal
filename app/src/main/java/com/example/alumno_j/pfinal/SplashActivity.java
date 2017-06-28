@@ -23,13 +23,17 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                // This method will be executed once the timer is over
-                // Start your app main activity
-                Intent i = new Intent(SplashActivity.this, LoginActivity.class);
-                startActivity(i);
-
-                // close this activity
+                Intent intent;
+                boolean session= PreferencesHelper.isSignedIn(SplashActivity.this);
+                if(session)
+                {
+                    intent=new Intent(SplashActivity.this, EjemploActivity.class);
+                }else {
+                    intent = new Intent(SplashActivity.this, LoginActivity.class);
+                }
+                startActivity(intent);
                 finish();
+
             }
         }, SPLASH_DISPLAY_LENGTH);
     }

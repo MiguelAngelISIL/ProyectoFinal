@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void gotoMain() {
         savePreferences();
-        Intent intent= new Intent(this,MainActivity.class);
+        Intent intent= new Intent(this,EjemploActivity.class);
         startActivity(intent);
     }
 

@@ -13,15 +13,15 @@ import java.util.Date;
 
 public class PersonaDao {
 
-    private static final String TABLE = "Persona";
-    private static final String COL_ID = "Id";
-    private static final String COL_NOMBRE = "Nombre";
-    private static final String COL_APELLIDO = "Apellido";
-    private static final String COL_DIRECCION = "Direccion";
-    private static final String COL_EDAD = "Edad";
-    private static final String COL_DOCUMENTO = "Documento";
-    private static final String COL_TIP_DOC = "Tip_doc";
-    private static final String COL_FEC_NAC ="Fec_nac" ;
+    private static final String TABLE = "persona";
+    private static final String COL_ID = "id";
+    private static final String COL_NOMBRE = "nombre";
+    private static final String COL_APELLIDO = "apellido";
+    private static final String COL_DIRECCION = "dirección";
+    private static final String COL_EDAD = "edad";
+    private static final String COL_DOCUMENTO = "documento";
+    private static final String COL_TIP_DOC = "tip_doc";
+    private static final String COL_FEC_NAC ="fecha_nac" ;
     private Context mContext;
     private DatabaseHelper mDatabaseHelper;
     
@@ -76,6 +76,7 @@ public class PersonaDao {
         return personaBD;
     }
 
+
     public ArrayList<Persona> getAll() {
         //OBTENIENDO TODOS LOS STUDENT
         Cursor cursor = mDatabaseHelper.openDataBase().query(TABLE, null, null, null, null, null, null);
@@ -92,6 +93,7 @@ public class PersonaDao {
 
         return lstPersona;
     }
+
 
     private Persona transformCursorToPersona(Cursor cursor) {
         Persona persona = new Persona();

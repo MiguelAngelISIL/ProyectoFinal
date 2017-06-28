@@ -1,9 +1,11 @@
 package com.example.alumno_j.pfinal;
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,15 +20,19 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainAdapterVie
     private MainAdapterListener mMainAdapterListener;
 
 
-    public MainAdapter(MainAdapterListener mainAdapterListener) {
-        this.mMainAdapterListener =mainAdapterListener;
+    public MainAdapter(Activity mainAdapterListener) {
+        this.mMainAdapterListener = (MainAdapterListener) mainAdapterListener;
     }
+
+
 
     public void clearAllAndAddAll(List<Persona> lstPersona){
         mLstPersona.clear();
         mLstPersona.addAll(lstPersona);
         notifyDataSetChanged();
     }
+
+
 
     public void removeItemAtPosition(int position){
         if(mMainAdapterListener!=null)
@@ -47,12 +53,15 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainAdapterVie
 
         holder.itemView.setOnLongClickListener(itemViewOnLongClickListener);
         holder.itemView.setOnClickListener(itemViewOnClickListener);
-        holder.tvNombreCompleto.setText(persona.getNombre()==null?"":persona.getNombre()+", "+persona.getApellido()==null?"":persona.getApellido());
+        holder.tvNombre.setText(persona.getNombre()==null?"":persona.getNombre());
+        holder.tvApellido.setText(persona.getApellido()==null?"":persona.getApellido());
         holder.tvDireccion.setText(persona.getDireccion()==null?"":persona.getDireccion());
-     //   holder.tvMainItemDocumentNumber.setText(student.getDocumentNumber()==null?"":student.getDocumentNumber());
-       // holder.tvMainItemPhone.setText(student.getPhone()==null?"":student.getPhone());
-       // int age = student.getAge()==null?0:Integer.parseInt(student.getAge());
-       // holder.tvMainItemAge.setText(holder.itemView.getContext().getResources().getQuantityString(R.plurals.pl_anios,age,age));
+
+       holder.tvDocumento.setText(persona.getDocumento()==null?"":persona.getDocumento());
+        holder.tvTip_doc.setText(persona.getTip_doc()==null?"":persona.getTip_doc());
+       holder.tvFecha_nac.setText(persona.getFec_nac()==null?"":persona.getFec_nac());
+       int age = persona.getEdad()==null?0:Integer.parseInt(persona.getEdad());
+        holder.tvEdad.setText(holder.itemView.getContext().getResources().getQuantityString(R.plurals.pl_anios,age,age));
 
     }
     private View.OnClickListener itemViewOnClickListener = new View.OnClickListener() {
@@ -86,12 +95,18 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainAdapterVie
     }
 
     static class MainAdapterViewHolder extends RecyclerView.ViewHolder{
-        TextView tvNombreCompleto,tvDireccion;
+        TextView tvNombre,tvApellido,tvDireccion, tvEdad,tvDocumento,tvTip_doc,tvFecha_nac;
+
 
         public MainAdapterViewHolder(View itemView) {
             super(itemView);
-            tvNombreCompleto= (TextView) itemView.findViewById(R.id.tvNombreCompleto);
+            tvNombre= (TextView) itemView.findViewById(R.id.tvNombre);
+            tvApellido=(TextView)itemView.findViewById(R.id.tvApellido);
             tvDireccion = (TextView) itemView.findViewById(R.id.tvDireccion);
+           tvEdad=(TextView)itemView.findViewById(R.id.tvEdad);
+            tvDocumento=(TextView)itemView.findViewById(R.id.tvDocumento);
+            tvTip_doc=(TextView)itemView.findViewById(R.id.tvTip_doc);
+            tvFecha_nac=(TextView)itemView.findViewById(R.id.tvFecha_nac);
 
         }
     }

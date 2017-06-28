@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipos">
+        <item>Dni</item>
+        <item>Factura</item>
+        <item>Pasaporte</item>
+
+    </string-array>
+
+</resources>

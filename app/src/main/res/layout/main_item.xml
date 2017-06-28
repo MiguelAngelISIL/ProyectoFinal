@@ -5,11 +5,17 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvNombreCompleto"
+            android:id="@+id/tvNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="1" />
+    <TextView
+        android:id="@+id/tvApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1" />
 
         <TextView
             android:id="@+id/tvDireccion"
@@ -18,8 +24,51 @@
             android:ellipsize="end"
             android:maxLines="1" />
 
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
 
-        <View
+        android:layout_gravity="bottom"
+        android:id="@+id/ivEstado"
+        android:background="@drawable/crojo"
+
+        />
+         <TextView
+        android:id="@+id/tvEdad"
+             android:visibility="gone"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tvDocumento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:ellipsize="end"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tvTip_doc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:ellipsize="end"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tvFecha_nac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:ellipsize="end"
+        android:maxLines="1" />
+
+
+
+    <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginBottom="8dp"
